@@ -9,10 +9,12 @@ public class SpeedBoosterOpponent : MonoBehaviour
     //public PlayerController playerController;
     public OpponentController opponentController;
 
+    public GameObject speedBoostIcon;
+
     private void Start()
     {
         OpponentAgent = GetComponent<NavMeshAgent>();
-
+        speedBoostIcon.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +22,8 @@ public class SpeedBoosterOpponent : MonoBehaviour
         {
             //playerController.runningSpeed += 3f;
             opponentController.OpponentAgent.speed += 3f;
+            speedBoostIcon.SetActive(true);
+
             StartCoroutine(SlowDownAfeterCoroutine());
         }
     }
@@ -29,5 +33,7 @@ public class SpeedBoosterOpponent : MonoBehaviour
         yield return new WaitForSeconds(2f);
         //playerController.runningSpeed -= 3f;
         opponentController.OpponentAgent.speed -= 3f;
+
+        speedBoostIcon.SetActive(false);
     }
 }
