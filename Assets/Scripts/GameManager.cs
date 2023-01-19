@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     void CalculateRank()
     {
-        sortArray = sortArray.OrderBy(x => x.dist).ToList(); //? dist or distance
+        sortArray = sortArray.OrderBy(x => x.dist).ToList(); //?
         sortArray[0].rank = 1;
         sortArray[1].rank = 2;
         sortArray[2].rank = 3;

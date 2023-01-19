@@ -6,7 +6,7 @@ public class RankingSystem : MonoBehaviour
 {
     public float dist;
     public GameObject endTarget;
-    public int rank;  // not sure it shhould be here??
+    public int rank;  // not sure it shhould be here? I understood. To be able to see at Unity Editor
 
     void CalculateDistance()
     {
